@@ -49,9 +49,10 @@ body {
   gap: 3px;
   width: fit-content;
   padding: 5px 0;
+  padding-right: 5px;
 }
 
-.function-buttons {
+.function.buttons {
   min-width: 80px;
   min-height: 50px;
   border: 1px solid #ddd;
@@ -69,7 +70,7 @@ body {
   padding-right: 0;
 }
 
-.number-buttons {
+.number.buttons {
   border: 1px solid #ddd;
   min-width: 100px;
   min-height: 50px;
@@ -78,7 +79,7 @@ body {
   align-items: center;
 }
 
-.number-buttons:hover,
-.function-buttons:hover {
+.number.buttons:hover,
+.function.buttons:hover {
   cursor: pointer;
 }
