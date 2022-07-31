@@ -16,19 +16,21 @@ body {
 
 .calc-container {
   border: 1px solid blue;
-  width: fit-content;
+  width: min(450px, 45%);
+  height: min(470px, 70%);
   text-align: center;
+  flex-shrink: 0;
 }
 
 .calc-screen-container {
   width: 100%;
-  height: 100%;
+  height: min(4.7em, 30%);
   padding: 10px;
 }
 
 .calc-screen {
   width: 100%;
-  height: 80px;
+  height:100%;
   border: 1px solid brown;
   text-align: right;
   display: flex;
@@ -39,41 +41,45 @@ body {
 
 .buttons-area {
   display: flex;
-  width: fit-content;
+  width: 100%;
+  justify-content: center;
 }
 
 .function-buttons-container {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 3px;
-  width: fit-content;
+  align-items: flex-end;
+  width: min(35%, 100px);
+  height: 100%;
+  gap: 8.5px;
   padding: 5px 0;
-  padding-right: 5px;
 }
 
 .function.buttons {
-  min-width: 80px;
-  min-height: 50px;
+  width: min(83px, 90%);
+  height: min(4vw, 60px);
   border: 1px solid #ddd;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10%;
 }
 
 .numbers-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 320px;
+  justify-content: center;
+  width: min(75%, 335px);
+  height: min(80%, 400px);
   gap: 5px;
   padding: 5px;
-  padding-right: 0;
 }
 
 .number.buttons {
   border: 1px solid #ddd;
-  min-width: 100px;
-  min-height: 50px;
+  width: min(120px, 30%);
+  height: min(5vw, 80px);
   display: flex;
   justify-content: center;
   align-items: center;
