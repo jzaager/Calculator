@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(3, 2, 0, 0.13);
 }
 
 .calc-container .buttons {
