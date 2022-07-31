@@ -15,7 +15,7 @@ body {
 }
 
 .calc-container .buttons {
-  font-size: clamp(1.2rem, 1.6vw, 2rem);
+  font-size: clamp(1.1rem, 1.5vw, 2rem);
 }
 
 .calc-container {
@@ -39,7 +39,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  font-size: clamp(1.6rem, 2.2vw, 3rem);
+  font-size: clamp(1.8rem, 2.3vw, 3rem);
 }
 
 .buttons-area {
@@ -73,8 +73,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
- /*  width: min(75%, 335px);
-  height: min(80%, 400px); */
   width: clamp(10%, 335px, 20rem);
   height: clamp(20%, 400px, 25rem);
   gap: 5px;
@@ -91,6 +89,7 @@ body {
 }
 
 .number.buttons:hover,
-.function.buttons:hover {
+.function.buttons:hover,
+.delete:hover {
   cursor: pointer;
 }

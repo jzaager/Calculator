@@ -5,6 +5,7 @@ const displayArea = document.querySelector('.calc-screen');
 const buttons = document.querySelectorAll('.buttons');
 const functionBtns = document.querySelectorAll('.function');
 const equalsBtn = document.getElementById('.equals');
+const deleteBtn = document.querySelector('.delete');
 
 // CALCULATION FUNCTIONS
 const add = (a, b) => a + b;
@@ -23,6 +24,16 @@ const operate = function(operator, firstNum, secondNum) {
 // EVENT LISTENERS //
 buttons.forEach(button => button.addEventListener('click', (e) => 
   updateDisplay(e)));
+deleteBtn.addEventListener('click', () => {
+  let deletedItem = displayArea.textContent.slice(-1);
+  if (deletedItem === '+' || deletedItem === '-' || deletedItem === 'x' ||
+  deletedItem === '÷') {
+    --operatorCount;
+  }
+  displayValue = displayArea.textContent.slice(0, -1);
+  displayArea.textContent = displayValue;
+  return displayValue;
+});
 functionBtns.forEach(button => button.addEventListener('click', (e) => {
   if (e.target.id === 'equals') {
     return;
@@ -34,7 +45,7 @@ functionBtns.forEach(button => button.addEventListener('click', (e) => {
     let solution = operate(getOperator(displayValue), +getFirstValue(displayValue), +getSecondValue(displayValue));
     displayArea.textContent = solution;
     displayArea.textContent += secondOperator;
-    displayValue += secondOperator;
+    displayValue = displayArea.textContent;
   }
 }));
 
