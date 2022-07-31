@@ -46,7 +46,7 @@ body {
   align-items: flex-end;
   font-size: clamp(1.9rem, 2.4vw, 3rem);
   border-radius: 3px;
-  box-shadow: inset 0px 0px 3px 1px gray;
+  box-shadow: inset 0px 0px 3px 1px rgba(158, 76, 0, 0.623);
 }
 
 .buttons-area {

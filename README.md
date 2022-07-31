@@ -2,7 +2,7 @@
 
 ## Calculator
 
-A simple web application to calculate basic math equations based on user input. [Live Version]()
+A simple web application to calculate basic math equations based on user input. [Live Version](https://jzaager.github.io/Calculator/)
 
 ### Goals for this project:
 
