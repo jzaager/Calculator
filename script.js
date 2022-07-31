@@ -24,19 +24,15 @@ const operate = function(operator, firstNum, secondNum) {
 buttons.forEach(button => button.addEventListener('click', (e) => 
   updateDisplay(e)));
 functionBtns.forEach(button => button.addEventListener('click', (e) => {
-  if (e.target.id === 'equals') 
-    return 
-
+  if (e.target.id === 'equals') {
+    return;
+  }
   ++operatorCount;
-  console.log({operatorCount});
   if (operatorCount > 1) {
     let secondOperator = displayValue.slice(-1);
     displayValue = displayValue.substring(0, (displayValue.length - 1));
-    getOperator(displayValue);
-    getFirstValue(displayValue);
-    getSecondValue(displayValue);
-    displayValue = operate(getOperator(displayValue), +getFirstValue(displayValue), +getSecondValue(displayValue));
-    displayArea.textContent = displayValue;
+    let solution = operate(getOperator(displayValue), +getFirstValue(displayValue), +getSecondValue(displayValue));
+    displayArea.textContent = solution;
     displayArea.textContent += secondOperator;
     displayValue += secondOperator;
   }
@@ -52,11 +48,10 @@ function updateDisplay(e) {
     return displayValue = null;
   }
    if (e.target.id === 'equals') {
-    displayValue = operate(getOperator(displayValue), +getFirstValue(displayValue), +getSecondValue(displayValue));
+    let solution = operate(getOperator(displayValue), +getFirstValue(displayValue), +getSecondValue(displayValue));
     operatorCount = 0;
-    return displayArea.textContent = displayValue;
+    return displayArea.textContent = solution;
   }
-
   displayArea.textContent += e.target.id;
   displayValue = displayArea.textContent;
   console.log(displayValue);
@@ -64,22 +59,61 @@ function updateDisplay(e) {
 
 // GET PARAMETERS FOR OPERATE FUNCTION
 function getOperator(string) {
+  if (string[0] === '-') {
+    for (let j = 1; j < string.length; j++) {
+      if (isNaN(+string[j])) {
+        if (string[j] === '.') {
+          continue;
+        }
+      return string[j];
+      }
+    }
+  }
   for (let i = 0; i < string.length; i++) {
-    if (isNaN(+string[i])) 
-      return string[i]
+    if (isNaN(+string[i])) {
+      if (string[i] === '.') {
+        continue;
+      }
+    return string[i];
+    }
   }
 }
 
 function getFirstValue(string) {
+  if (string[0] === '-') {
+    for (let j = 1; j < string.length; j++) {
+      if (isNaN(+string[j])) {
+        if (string[j] === '.') {
+          continue;
+        }
+      return string.substring(0, j);
+      }
+    }
+  }
   for (let i = 0; i < string.length; i++) {
-    if (isNaN(+string[i])) 
-      return string.substring(0, i);
+    if (isNaN(+string[i])){
+      if (string[i] === '.')
+        continue;
+    return string.substring(0, i);
+    }
   }
 }
 
 function getSecondValue(string) {
+  if (string[0] === '-') {
+    for (let j = 1; j < string.length; j++) {
+      if (isNaN(+string[j])) {
+        return string.substring(j + 1);
+      }
+    }
+  }
+
   for (let i = 0; i < string.length; i++) {
-    if (isNaN(+string[i])) 
-      return string.substring((i + 1));
+    if (isNaN(+string[i])) {
+      if (string[i] === '.') {
+        continue;
+      }
+    return string.substring((i + 1));
+    }
   }
 }
