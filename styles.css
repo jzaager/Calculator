@@ -26,7 +26,7 @@ body {
   height: max(430px, 10%);
   text-align: center;
   border-radius: 5px;
-  box-shadow: 0 2px 4px 1px #AAA;
+  box-shadow: 0 2px 6px 1px #AAA;
 }
 
 .calc-screen-container {
@@ -61,18 +61,47 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
+  gap: 3px;
   width: clamp(20px, 80px, 10rem);
-  padding: 5px 0;
 }
 
 .function.buttons, .delete {
   width: clamp(20px, 70px, 10rem);
-  height: clamp(15px, 40px, 5rem);
+  height: clamp(20px, 45px, 5rem);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 3px;
+  background-color:rgba(238, 250, 77, 0.582);
+}
+
+.function.buttons:hover {
+  background-color:rgba(237, 253, 11, 0.925);
+}
+
+#equals {
+  background-color: rgba(116, 253, 81, 0.767);
+}
+
+#equals:hover {
+  background-color: rgba(46, 228, 0, 0.904);
+}
+
+#delete {
+  background-color: rgba(255, 72, 72, 0.562);
+}
+
+#delete:hover {
+  background-color: rgba(212, 0, 0, 0.726);
+}
+
+#clear {
+  background-color: rgba(253, 158, 95, 0.562);
+}
+
+#clear:hover {
+  background-color: rgba(252, 119, 30, 0.699);
 }
 
 .numbers-container {
@@ -94,14 +123,20 @@ body {
   border-radius: 3px;
 }
 
+.number.buttons:hover {
+  background-color: rgba(33, 185, 255, 0.562);
+}
+
 .number.buttons:hover,
 .function.buttons:hover,
 .delete:hover {
   cursor: pointer;
-  background-color: rgba(45, 186, 252, 0.438);
 }
 
 .buttons, .delete {
-  background-color:rgba(121, 228, 255, 0.342);
   border: 1px solid rgb(42, 136, 165)
+}
+
+.buttons {
+  background-color:rgba(111, 221, 248, 0.61);
 }

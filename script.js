@@ -18,7 +18,12 @@ const operate = function(operator, firstNum, secondNum) {
   if (operator === '+') return add(firstNum, secondNum);
   if (operator === '-') return subtract(firstNum, secondNum);
   if (operator === 'x') return multiply(firstNum, secondNum);
-  if (operator === '÷') return divide(firstNum, secondNum);
+  if (operator === '÷') {
+    if (secondNum == 0) {
+      return displayArea.textContent = "No Witchcraft";
+    }
+  }
+  return divide(firstNum, secondNum);
 }
 
 // EVENT LISTENERS //
